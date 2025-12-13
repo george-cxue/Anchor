@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NegotiateIQ - Strategic Negotiation Preparation Tool",
+  title: "Anchor - Strategic Negotiation Preparation Tool",
   description: "Prepare for high-stakes negotiations with BATNA analysis, ZOPA visualization, and strategic scripting tools.",
 };
 

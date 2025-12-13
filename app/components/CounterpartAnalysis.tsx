@@ -1,6 +1,4 @@
 'use client';
-
-import React from 'react';
 import {
   Users,
   Eye,
@@ -86,7 +84,7 @@ export default function CounterpartAnalysis() {
                 onChange={(e) => updateCounterpartProfile('positions', e.target.value)}
                 placeholder="e.g., 'We can only offer $X for this role...'"
                 rows={4}
-                className="w-full resize-none"
+                className="w-full resize-none py-2 px-3"
               />
             </div>
           </div>
@@ -106,7 +104,7 @@ export default function CounterpartAnalysis() {
                 onChange={(e) => updateCounterpartProfile('interests', e.target.value)}
                 placeholder="e.g., 'They need to fill this position quickly, reduce turnover...'"
                 rows={4}
-                className="w-full resize-none"
+                className="w-full resize-none py-2 px-3"
               />
             </div>
           </div>
@@ -126,7 +124,7 @@ export default function CounterpartAnalysis() {
                 onChange={(e) => updateCounterpartProfile('constraints', e.target.value)}
                 placeholder="e.g., 'Budget freeze, internal equity concerns, approval process...'"
                 rows={4}
-                className="w-full resize-none"
+                className="w-full resize-none py-2 px-3"
               />
             </div>
           </div>
@@ -179,13 +177,13 @@ export default function CounterpartAnalysis() {
               Estimated Counterpart Reservation
             </label>
             <div className="relative">
-              <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--muted)]" />
+              <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--muted)]" />
               <input
                 type="number"
                 value={theirReservation || ''}
                 onChange={(e) => setEstimatedCounterpartReservation(Number(e.target.value))}
                 placeholder="Their walk-away number"
-                className="w-full text-lg pl-12 py-3 font-mono"
+                className="w-full text-lg py-3 pl-10 pr-3 font-mono"
               />
             </div>
           </div>

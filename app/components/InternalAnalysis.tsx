@@ -1,6 +1,4 @@
 'use client';
-
-import React from 'react';
 import {
   Plus,
   Trash2,
@@ -95,18 +93,18 @@ export default function InternalAnalysis() {
                       value={option.description}
                       onChange={(e) => updateBATNAOption(option.id, 'description', e.target.value)}
                       placeholder={`Alternative ${index + 1}`}
-                      className="w-full text-sm"
+                      className="w-full text-sm py-2 px-3"
                     />
                   </div>
                   <div className="col-span-2">
                     <div className="relative">
-                      <DollarSign className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 text-[var(--muted)]" />
+                      <DollarSign className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[var(--muted)]" />
                       <input
                         type="number"
                         value={option.value || ''}
                         onChange={(e) => updateBATNAOption(option.id, 'value', Number(e.target.value))}
                         placeholder="0"
-                        className="w-full text-sm pl-6 text-right"
+                        className="w-full text-sm py-2 pl-7 pr-2 text-right"
                       />
                     </div>
                   </div>
@@ -119,9 +117,9 @@ export default function InternalAnalysis() {
                         value={option.probability || ''}
                         onChange={(e) => updateBATNAOption(option.id, 'probability', Number(e.target.value))}
                         placeholder="50"
-                        className="w-full text-sm text-right pr-6"
+                        className="w-full text-sm text-right py-2 pl-2 pr-7"
                       />
-                      <Percent className="absolute right-2 top-1/2 -translate-y-1/2 w-3 h-3 text-[var(--muted)]" />
+                      <Percent className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-[var(--muted)]" />
                     </div>
                   </div>
                   <div className="col-span-2 text-right text-sm font-mono text-[var(--success)]">
@@ -169,13 +167,13 @@ export default function InternalAnalysis() {
                 Walk-Away Number
               </label>
               <div className="relative">
-                <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--muted)]" />
+                <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--muted)]" />
                 <input
                   type="number"
                   value={state.reservationPrice || ''}
                   onChange={(e) => setReservationPrice(Number(e.target.value))}
                   placeholder="Enter your minimum acceptable value"
-                  className="w-full text-lg pl-12 py-4 font-mono"
+                  className="w-full text-lg py-4 pl-10 pr-3 font-mono"
                 />
               </div>
             </div>
@@ -254,7 +252,7 @@ export default function InternalAnalysis() {
                       value={issue.name}
                       onChange={(e) => updateIssue(issue.id, 'name', e.target.value)}
                       placeholder="e.g., Base Salary, Equity, PTO..."
-                      className="w-full"
+                      className="w-full py-2 px-3"
                     />
                   </div>
                   <div className="col-span-3">

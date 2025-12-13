@@ -1,6 +1,4 @@
 'use client';
-
-import React from 'react';
 import {
   Calculator,
   Plus,
@@ -82,13 +80,13 @@ export default function StrategyTools() {
                 <div>
                   <label className="block text-xs text-[var(--muted)] mb-1">Value ($)</label>
                   <div className="relative">
-                    <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
+                    <DollarSign className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
                     <input
                       type="number"
                       value={bestCaseValue || ''}
                       onChange={(e) => updateEVScenario('bestCaseValue', Number(e.target.value))}
                       placeholder="0"
-                      className="w-full pl-9 font-mono"
+                      className="w-full py-2 pl-8 pr-3 font-mono"
                     />
                   </div>
                 </div>
@@ -102,9 +100,9 @@ export default function StrategyTools() {
                       value={bestCaseProbability || ''}
                       onChange={(e) => updateEVScenario('bestCaseProbability', Number(e.target.value))}
                       placeholder="50"
-                      className="w-full pr-8 font-mono"
+                      className="w-full py-2 pl-3 pr-8 font-mono"
                     />
-                    <Percent className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
+                    <Percent className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
                   </div>
                 </div>
               </div>
@@ -126,13 +124,13 @@ export default function StrategyTools() {
                 <div>
                   <label className="block text-xs text-[var(--muted)] mb-1">Value ($)</label>
                   <div className="relative">
-                    <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
+                    <DollarSign className="absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
                     <input
                       type="number"
                       value={worstCaseValue || ''}
                       onChange={(e) => updateEVScenario('worstCaseValue', Number(e.target.value))}
                       placeholder="0"
-                      className="w-full pl-9 font-mono"
+                      className="w-full py-2 pl-8 pr-3 font-mono"
                     />
                   </div>
                 </div>
@@ -146,9 +144,9 @@ export default function StrategyTools() {
                       value={worstCaseProbability || ''}
                       onChange={(e) => updateEVScenario('worstCaseProbability', Number(e.target.value))}
                       placeholder="50"
-                      className="w-full pr-8 font-mono"
+                      className="w-full py-2 pl-3 pr-8 font-mono"
                     />
-                    <Percent className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
+                    <Percent className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
                   </div>
                 </div>
               </div>
@@ -255,7 +253,7 @@ export default function StrategyTools() {
                           onChange={(e) => updateIfThenScript(script.id, 'trigger', e.target.value)}
                           placeholder="e.g., 'That's our final offer'"
                           rows={2}
-                          className="w-full resize-none text-sm"
+                          className="w-full resize-none text-sm py-2 px-3"
                         />
                       </div>
                       <div className="flex justify-center">
@@ -270,7 +268,7 @@ export default function StrategyTools() {
                           onChange={(e) => updateIfThenScript(script.id, 'response', e.target.value)}
                           placeholder="e.g., 'I appreciate you sharing that. Help me understand what constraints are limiting flexibility here.'"
                           rows={2}
-                          className="w-full resize-none text-sm"
+                          className="w-full resize-none text-sm py-2 px-3"
                         />
                       </div>
                     </div>

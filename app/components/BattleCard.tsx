@@ -1,6 +1,4 @@
 'use client';
-
-import React from 'react';
 import {
   Shield,
   Target,
@@ -30,7 +28,6 @@ export default function BattleCard() {
   } = useNegotiation();
 
   const calculatedAnchor = getCalculatedAnchor();
-  const displayAnchor = state.openingAnchor !== null ? state.openingAnchor : calculatedAnchor;
 
   const highPriorityIssues = state.issues.filter(i => i.priority === 'high');
   const lowPriorityIssues = state.issues.filter(i => i.priority === 'low');
@@ -86,13 +83,13 @@ export default function BattleCard() {
           </div>
           <div className="flex items-center gap-3">
             <div className="relative flex-1">
-              <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 w-6 h-6 text-[var(--muted)]" />
+              <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 text-[var(--muted)]" />
               <input
                 type="number"
                 value={state.openingAnchor !== null ? state.openingAnchor : calculatedAnchor || ''}
                 onChange={(e) => setOpeningAnchor(e.target.value ? Number(e.target.value) : null)}
                 placeholder={calculatedAnchor.toString()}
-                className="w-full text-3xl md:text-4xl font-bold font-mono pl-14 py-3 bg-transparent border-2 border-[var(--success)]/30 rounded-lg focus:border-[var(--success)]"
+                className="w-full text-3xl md:text-4xl font-bold font-mono py-3 pl-12 pr-4 bg-transparent border-2 border-[var(--success)]/30 rounded-lg focus:border-[var(--success)]"
               />
             </div>
           </div>

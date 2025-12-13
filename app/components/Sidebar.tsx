@@ -1,12 +1,11 @@
 'use client';
-
-import React from 'react';
 import {
-  Target,
+  Anchor,
   Users,
   Calculator,
   Shield,
-  ChevronRight
+  ChevronRight,
+  Target
 } from 'lucide-react';
 
 export type TabType = 'internal' | 'counterpart' | 'strategy' | 'battlecard';
@@ -57,10 +56,10 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
       <div className="p-6 border-b border-[var(--card-border)]">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-lg bg-[var(--accent)] flex items-center justify-center">
-            <Target className="w-6 h-6 text-white" />
+            <Anchor className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-lg font-semibold text-[var(--foreground)]">NegotiateIQ</h1>
+            <h1 className="text-lg font-semibold text-[var(--foreground)]">Anchor</h1>
             <p className="text-xs text-[var(--muted)]">Strategic Prep Tool</p>
           </div>
         </div>
