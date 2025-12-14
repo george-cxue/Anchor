@@ -1,12 +1,12 @@
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 import {
   BookOpen,
   Lightbulb,
   MessageSquare,
   ThumbsUp,
-  User
-} from 'lucide-react';
+  User,
+} from "lucide-react";
 
 interface AdviceItem {
   id: string;
@@ -18,29 +18,39 @@ interface AdviceItem {
 // Example advice from other users
 const exampleAdvice: AdviceItem[] = [
   {
-    id: '1',
-    author: 'Sarah M.',
-    advice: 'Always anchor first if you have good market data. It sets the frame for the entire negotiation and gives you psychological advantage.',
-    likes: 24
+    id: "1",
+    author: "George X.",
+    advice:
+      "Try not to rush the negotiation. Take your time to understand everyone's needs.",
+    likes: 24,
   },
   {
-    id: '2',
-    author: 'Marcus Chen',
-    advice: 'Don\'t be afraid to use silence. After making an offer, stay quiet. Let them fill the void—it often works in your favor.',
-    likes: 18
+    id: "2",
+    author: "Rebecca W.",
+    advice:
+      "The best negotiators listen more than they speak in a negotiation.",
+    likes: 18,
   },
   {
-    id: '3',
-    author: 'Jennifer K.',
-    advice: 'Focus on building rapport before diving into numbers. People are more likely to work with you when they like you.',
-    likes: 31
-  }
+    id: "3",
+    author: "Joaquin G.",
+    advice:
+      "Focus on building rapport before diving into numbers. People are more likely to work with you when they like you!",
+    likes: 31,
+  },
+  {
+    id: "4",
+    author: "Nicole B.",
+    advice:
+      'Use the "anchor" technique early in the negotiation. It sets the frame for all subsequent discussions.',
+    likes: 28,
+  },
 ];
 
 export default function Reflection() {
-  const [reflection, setReflection] = useState('');
-  const [newAdvice, setNewAdvice] = useState('');
-  const [userName, setUserName] = useState('');
+  const [reflection, setReflection] = useState("");
+  const [newAdvice, setNewAdvice] = useState("");
+  const [userName, setUserName] = useState("");
   const [advice, setAdvice] = useState<AdviceItem[]>(exampleAdvice);
 
   const handleSubmitAdvice = () => {
@@ -49,18 +59,20 @@ export default function Reflection() {
         id: Date.now().toString(),
         author: userName,
         advice: newAdvice,
-        likes: 0
+        likes: 0,
       };
       setAdvice([newAdviceItem, ...advice]);
-      setNewAdvice('');
-      setUserName('');
+      setNewAdvice("");
+      setUserName("");
     }
   };
 
   const handleLike = (id: string) => {
-    setAdvice(advice.map(item =>
-      item.id === id ? { ...item, likes: item.likes + 1 } : item
-    ));
+    setAdvice(
+      advice.map((item) =>
+        item.id === id ? { ...item, likes: item.likes + 1 } : item
+      )
+    );
   };
 
   return (
@@ -72,7 +84,9 @@ export default function Reflection() {
         </div>
         <div>
           <h2 className="text-2xl font-bold text-foreground">Reflection</h2>
-          <p className="text-muted">Learn from your experience and help others</p>
+          <p className="text-muted">
+            Learn from your experience and help others
+          </p>
         </div>
       </div>
 
@@ -83,12 +97,14 @@ export default function Reflection() {
           Your Reflection
         </h3>
         <p className="text-sm text-muted mb-4">
-          Take a moment to reflect on the negotiation. What went well? What would you do differently next time?
+          Take a moment to reflect on the negotiation. What went well? What
+          would you do differently next time? (There are reflection prompts
+          below).
         </p>
         <textarea
           value={reflection}
           onChange={(e) => setReflection(e.target.value)}
-          placeholder="Write your thoughts here... What strategies worked? What surprised you? What did you learn?"
+          placeholder="Write your thoughts here..."
           className="w-full h-40 px-4 py-3 bg-background border border-card-border rounded-lg text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent resize-none"
         />
         <div className="mt-4 flex items-center justify-between">
@@ -98,7 +114,7 @@ export default function Reflection() {
           <button
             onClick={() => {
               // Could save to localStorage or trigger download
-              console.log('Saving reflection:', reflection);
+              console.log("Saving reflection:", reflection);
             }}
             className="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent-hover transition-colors"
           >
@@ -143,7 +159,9 @@ export default function Reflection() {
 
         {/* Advice List */}
         <div className="space-y-3">
-          <h4 className="text-sm font-medium text-foreground mb-3">Community Wisdom</h4>
+          <h4 className="text-sm font-medium text-foreground mb-3">
+            Community Wisdom
+          </h4>
           {advice.map((item) => (
             <div
               key={item.id}
@@ -155,15 +173,23 @@ export default function Reflection() {
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-sm font-medium text-foreground">{item.author}</span>
+                    <span className="text-sm font-medium text-foreground">
+                      {item.author}
+                    </span>
                   </div>
-                  <p className="text-sm text-foreground leading-relaxed">{item.advice}</p>
+                  <p className="text-sm text-foreground leading-relaxed">
+                    {item.advice}
+                  </p>
                   <button
                     onClick={() => handleLike(item.id)}
                     className="mt-3 flex items-center gap-2 text-xs text-muted hover:text-accent transition-colors group"
                   >
                     <ThumbsUp className="w-4 h-4 group-hover:fill-current" />
-                    <span>{item.likes} {item.likes === 1 ? 'person found' : 'people found'} this helpful</span>
+                    <span>
+                      {item.likes}{" "}
+                      {item.likes === 1 ? "person found" : "people found"} this
+                      helpful
+                    </span>
                   </button>
                 </div>
               </div>
@@ -181,19 +207,25 @@ export default function Reflection() {
         <ul className="space-y-2 text-sm text-foreground">
           <li className="flex items-start gap-2">
             <span className="text-accent mt-0.5">•</span>
-            <span>How did your preparation impact the negotiation outcome?</span>
+            <span>
+              How did your preparation impact the negotiation outcome?
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-accent mt-0.5">•</span>
-            <span>Which strategies from your battle card proved most effective?</span>
+            <span>Which strategies that you used proved most effective?</span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-accent mt-0.5">•</span>
-            <span>What did you learn about the other party's priorities?</span>
+            <span>
+              What did you learn about the other party&apos;s priorities?
+            </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="text-accent mt-0.5">•</span>
-            <span>If you could do it again, what would you change?</span>
+            <span>
+              If you could do it again, what would you do differently?
+            </span>
           </li>
         </ul>
       </div>
