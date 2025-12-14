@@ -5,10 +5,11 @@ import {
   Calculator,
   Shield,
   ChevronRight,
-  Target
+  Target,
+  BookOpen
 } from 'lucide-react';
 
-export type TabType = 'internal' | 'counterpart' | 'strategy' | 'battlecard';
+export type TabType = 'internal' | 'counterpart' | 'strategy' | 'battlecard' | 'reflection';
 
 interface SidebarProps {
   activeTab: TabType;
@@ -46,6 +47,12 @@ const navItems: NavItem[] = [
     label: 'Battle Card',
     sublabel: 'Game Day',
     icon: Shield
+  },
+  {
+    id: 'reflection',
+    label: 'Reflection',
+    sublabel: 'Learn & Share',
+    icon: BookOpen
   },
 ];
 

@@ -7,6 +7,7 @@ import InternalAnalysis from './components/InternalAnalysis';
 import CounterpartAnalysis from './components/CounterpartAnalysis';
 import StrategyTools from './components/StrategyTools';
 import BattleCard from './components/BattleCard';
+import Reflection from './components/Reflection';
 
 function NegotiationApp() {
   const [activeTab, setActiveTab] = useState<TabType>('internal');
@@ -21,6 +22,8 @@ function NegotiationApp() {
         return <StrategyTools />;
       case 'battlecard':
         return <BattleCard />;
+      case 'reflection':
+        return <Reflection />;
       default:
         return <InternalAnalysis />;
     }
