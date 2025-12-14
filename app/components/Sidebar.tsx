@@ -84,7 +84,7 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
           </div>
           <div>
             <h1 className="text-lg font-semibold text-foreground">Anchor</h1>
-            <p className="text-xs text-muted">Negotiation Prep Tool</p>
+            <p className="text-xs text-muted">Negotiation Strategy Dashboard</p>
           </div>
         </div>
       </div>
@@ -135,11 +135,11 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
       </nav>
 
       {/* Footer */}
-      <div className="p-4 border-t border-card-border">
+      {/* <div className="p-4 border-t border-card-border">
         <div className="text-xs text-muted text-center">
           Negotiation Strategy Dashboard
         </div>
-      </div>
+      </div> */}
     </aside>
   );
 }

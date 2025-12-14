@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Anchor - Strategic Negotiation Preparation Tool",
-  description: "Prepare for high-stakes negotiations with BATNA analysis, ZOPA visualization, and strategic scripting tools.",
+  title: "Anchor",
+  description:
+    "Prepare for high-stakes negotiations with BATNA analysis, ZOPA visualization, and strategic scripting tools.",
 };
 
 export default function RootLayout({

@@ -42,7 +42,7 @@ const exampleAdvice: AdviceItem[] = [
     id: "4",
     author: "Nicole B.",
     advice:
-      'Use the "anchor" technique early in the negotiation. It sets the frame for all subsequent discussions.',
+      "Sometimes, getting to the best deal means knowing when to walk away.",
     likes: 28,
   },
 ];
