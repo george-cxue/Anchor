@@ -21,6 +21,8 @@ interface NavItem {
   label: string;
   sublabel: string;
   icon: React.ElementType;
+  color: string;
+  hoverColor: string;
 }
 
 const navItems: NavItem[] = [
@@ -28,31 +30,41 @@ const navItems: NavItem[] = [
     id: 'internal',
     label: 'Internal Analysis',
     sublabel: 'Know Thyself',
-    icon: Target
+    icon: Target,
+    color: 'var(--blue)',
+    hoverColor: '#1a6fc7'
   },
   {
     id: 'counterpart',
     label: 'Counterpart Analysis',
     sublabel: 'Know The Enemy',
-    icon: Users
+    icon: Users,
+    color: 'var(--purple)',
+    hoverColor: '#7851a3'
   },
   {
     id: 'strategy',
     label: 'Strategy Tools',
     sublabel: 'The Math',
-    icon: Calculator
+    icon: Calculator,
+    color: 'var(--green)',
+    hoverColor: '#0b6159'
   },
   {
     id: 'battlecard',
     label: 'Battle Card',
     sublabel: 'Game Day',
-    icon: Shield
+    icon: Shield,
+    color: 'var(--orange)',
+    hoverColor: '#b8610a'
   },
   {
     id: 'reflection',
     label: 'Reflection',
     sublabel: 'Learn & Share',
-    icon: BookOpen
+    icon: BookOpen,
+    color: 'var(--pink)',
+    hoverColor: '#d1478b'
   },
 ];
 
@@ -82,16 +94,22 @@ export default function Sidebar({ activeTab, onTabChange }: SidebarProps) {
             <button
               key={item.id}
               onClick={() => onTabChange(item.id)}
+              style={{
+                backgroundColor: isActive ? item.color : 'transparent',
+              }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-left group ${
                 isActive
-                  ? 'bg-[var(--accent)] text-white'
-                  : 'text-[var(--foreground)] hover:bg-[var(--card-border)]'
+                  ? 'text-white shadow-sm'
+                  : 'text-foreground hover:bg-hover-bg'
               }`}
             >
-              <Icon className={`w-5 h-5 ${isActive ? 'text-white' : 'text-[var(--muted)]'}`} />
+              <Icon
+                className="w-5 h-5 transition-colors"
+                style={{ color: isActive ? 'white' : item.color }}
+              />
               <div className="flex-1">
                 <div className="font-medium text-sm">{item.label}</div>
-                <div className={`text-xs ${isActive ? 'text-blue-100' : 'text-[var(--muted)]'}`}>
+                <div className={`text-xs ${isActive ? 'text-white/80' : 'text-[var(--muted)]'}`}>
                   {item.sublabel}
                 </div>
               </div>
