@@ -213,7 +213,14 @@ export function NegotiationProvider({ children }: { children: ReactNode }) {
 
   const calculateEV = () => {
     const { bestCaseValue, bestCaseProbability, worstCaseValue, worstCaseProbability } = state.evScenario;
-    return (bestCaseValue * (bestCaseProbability / 100)) + (worstCaseValue * (worstCaseProbability / 100));
+    // Normalize probabilities so they sum to 100%
+    const totalProb = bestCaseProbability + worstCaseProbability;
+    if (totalProb === 0) return 0;
+
+    const normalizedBest = bestCaseProbability / totalProb;
+    const normalizedWorst = worstCaseProbability / totalProb;
+
+    return (bestCaseValue * normalizedBest) + (worstCaseValue * normalizedWorst);
   };
 
   // If/Then Scripts
